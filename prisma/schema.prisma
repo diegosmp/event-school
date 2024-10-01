@@ -1,0 +1,25 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Guest {
+  id        String  @id @default(uuid())
+  firstname String
+  lastname  String
+  cpf       String  @unique
+  tel       String
+  email     String? @unique
+  type      String
+  local     String
+  employee  String
+
+  creatAt  DateTime @default(now())
+  updateAt DateTime @updatedAt
+
+  @@map("guests")
+}
