@@ -7,10 +7,10 @@ import { ProfileGuestController } from './controllers/ProfileGuestController'
 
 const routes = Router()
 
+routes.get('/guest', new ShowAllGuestController().handle)
 routes.post('/guest/signup', new CreateGuestController().handle)
 routes.patch('/guest/profile', new EditGuestController().handle)
 routes.get('/guest/profile', new ProfileGuestController().handle)
 routes.delete('/guest/profile/delete', new DeleteGuestController().handle)
-routes.get('/guest', new ShowAllGuestController().handle)
 
 export default routes
