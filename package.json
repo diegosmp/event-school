@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "tsx --watch src/server.ts",
     "build": "tsc --build",
-    "start": "node dist/serve.js"
+    "start": "node dist/server.js",
+    "vercel-build": "prisma generate && prisma migrate deploy",
+    "prisma:generate": "prisma generate"
   },
   "keywords": [],
   "author": "",
